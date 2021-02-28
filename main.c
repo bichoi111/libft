@@ -1,15 +1,15 @@
 #include "libft.h"
 #include <stdio.h>
+#include <unistd.h>
 
 int main(void)
 {
-	char *pch;
-	char str[] = "Example string";
-	pch = (char *)ft_memchr(str, 'b', strlen(str));
-
-	if (pch != NULL)
-		printf("'r' found at position %ld. \n", pch - str + 1);
-	else
-		printf("not found. \n");
+	char str1[] = "dmkfd";
+	char str2[] = "dmkfd mfkdmkf s";
+	printf("memcmp     : %d \n", memcmp(str1, str2, 5));
+	printf("ft_ memcmp : %d \n", ft_memcmp(str1, str2, 5));
+	write(1, str1, 4);
+	printf("\n");
+	write(1, str2, 4);
 	return (0);
 }
